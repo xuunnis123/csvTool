@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "MXQRidQ8PZAFmRdifW6k1vCBtNn/f/9v3JnT6uVnvQ3uxSm4dJ/+P47ybdKa9kJ4G1ZRE08MnPPE7P/ncAtHFg==",
+  "success": true,
+  "projectFilePath": "/Users/jiyanglin/Projects/csvTool/csvTool/csvTool.csproj",
+  "expectedPackageFiles": [
+    "/Users/jiyanglin/.nuget/packages/csvhelper/30.0.1/csvhelper.30.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
