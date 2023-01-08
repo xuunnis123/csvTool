@@ -1,9 +1,12 @@
+/Users/jiyanglin/Projects/csvTool/csvTool/bin/Debug/net6.0/0108_visitors.csv
 /Users/jiyanglin/Projects/csvTool/csvTool/bin/Debug/net6.0/csvTool
 /Users/jiyanglin/Projects/csvTool/csvTool/bin/Debug/net6.0/csvTool.deps.json
 /Users/jiyanglin/Projects/csvTool/csvTool/bin/Debug/net6.0/csvTool.runtimeconfig.json
 /Users/jiyanglin/Projects/csvTool/csvTool/bin/Debug/net6.0/csvTool.dll
 /Users/jiyanglin/Projects/csvTool/csvTool/bin/Debug/net6.0/csvTool.pdb
 /Users/jiyanglin/Projects/csvTool/csvTool/bin/Debug/net6.0/CsvHelper.dll
+/Users/jiyanglin/Projects/csvTool/csvTool/bin/Debug/net6.0/Json.Net.dll
+/Users/jiyanglin/Projects/csvTool/csvTool/bin/Debug/net6.0/Newtonsoft.Json.dll
 /Users/jiyanglin/Projects/csvTool/csvTool/obj/Debug/net6.0/csvTool.csproj.AssemblyReference.cache
 /Users/jiyanglin/Projects/csvTool/csvTool/obj/Debug/net6.0/csvTool.GeneratedMSBuildEditorConfig.editorconfig
 /Users/jiyanglin/Projects/csvTool/csvTool/obj/Debug/net6.0/csvTool.AssemblyInfoInputs.cache

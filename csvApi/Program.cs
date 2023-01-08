@@ -16,38 +16,47 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 var app = builder.Build();
 
 app.MapGet("/getAllVisitors", async (ApplicationDbContext db) =>
-    //await db.Visitors.ToListAsync());
+    
     await db.Visitors.FromSqlRaw("dbo.SelectAllVisitor").ToListAsync());
 
-app.MapPost("/refreshVisitor", async (Visitor visitor, ApplicationDbContext db) =>
+app.MapPost("/refreshVisitor", async (HttpRequest request,Visitor visitor, ApplicationDbContext db) =>
 {
 
 
+    var id = request.Query["id"];
+
+    var visitor_phone = request.Query["visitor_phone"];
+
+    var visitor_name = request.Query["visitor_name"];
+
+    Console.WriteLine(id + visitor_phone + visitor_name);
     visitor = new Visitor { Id = 4, visitor_phone = 1, visitor_name = "test1" };
-
-    db.Visitors.Add(visitor);
-    await db.SaveChangesAsync();
-
-    return Results.Created($"/todoitems/{visitor.visitor_phone}", visitor);
+    try
+    {
+        await db.Visitors.FromSqlRaw($"dbo.AddVisitor {id},{visitor_phone},{visitor_name}").ToListAsync();
+        
+        await db.SaveChangesAsync();
+        Console.WriteLine("success");
+    }
+    catch (InvalidOperationException e) {
+        Console.WriteLine("e="+e);
+    }
+    //return "Successfully add :" + visit_name;
+    return visitor_phone;
 });
 
- //app.MapDelete("/deleteAllVisitors", async (ApplicationDbContext db) =>
+app.MapDelete("/deleteAllVisitors", async (ApplicationDbContext db) =>
+    {
+        try {
+            await db.Visitors.FromSqlRaw("dbo.DeleteAllVisitor2").ToListAsync();
+           
+        }
 
- //       await db.Visitors.de("dbo.DeleteAllVisitor"));
-        
-
-
-//app.MapDelete("/getAllVisitors/{id}", async (int id, ApplicationDbContext db) =>
-//{
-//    if (await db.Visitors.FindAsync(id) is Visitor visitor)
-//    {
-
-//        db.Visitors.Remove(visitor);
-//        await db.SaveChangesAsync();
-//        return Results.Ok(visitor);
-//    }
-
-//    return Results.NotFound();
-//});
+        catch (InvalidOperationException e) {
+            
+        }
+        return "Successfully delete!";
+    });
+    
 
 app.Run();
