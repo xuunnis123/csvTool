@@ -4,8 +4,8 @@ using System.Data.SqlClient;
 using System.Xml.Linq;
 using csvApi.Models;
 using Microsoft.EntityFrameworkCore.SqlServer;
-
-
+using System.Text.Json;
+using Newtonsoft.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,21 +19,15 @@ app.MapGet("/getAllVisitors", async (ApplicationDbContext db) =>
     
     await db.Visitors.FromSqlRaw("dbo.SelectAllVisitor").ToListAsync());
 
-app.MapPost("/refreshVisitor", async (HttpRequest request,Visitor visitor, ApplicationDbContext db) =>
+app.MapPost("/refreshVisitor", async (HttpRequest request, ApplicationDbContext db) =>
 {
 
+    var visitor = await request.ReadFromJsonAsync<Visitor>();
 
-    var id = request.Query["id"];
-
-    var visitor_phone = request.Query["visitor_phone"];
-
-    var visitor_name = request.Query["visitor_name"];
-
-    Console.WriteLine(id + visitor_phone + visitor_name);
-    visitor = new Visitor { Id = 4, visitor_phone = 1, visitor_name = "test1" };
+    Console.WriteLine("在 API 上取得：" + visitor.Id + visitor.visitor_phone + visitor.visitor_name);
     try
     {
-        await db.Visitors.FromSqlRaw($"dbo.AddVisitor {id},{visitor_phone},{visitor_name}").ToListAsync();
+        await db.Visitors.FromSqlRaw($"dbo.AddVisitor {visitor.Id},{visitor.visitor_phone},{visitor.visitor_name}").ToListAsync();
         
         await db.SaveChangesAsync();
         Console.WriteLine("success");
@@ -41,8 +35,8 @@ app.MapPost("/refreshVisitor", async (HttpRequest request,Visitor visitor, Appli
     catch (InvalidOperationException e) {
         Console.WriteLine("e="+e);
     }
-    //return "Successfully add :" + visit_name;
-    return visitor_phone;
+    
+    return visitor.Id+"|"+visitor.visitor_name+"|"+ visitor.visitor_phone;
 });
 
 app.MapDelete("/deleteAllVisitors", async (ApplicationDbContext db) =>

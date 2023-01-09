@@ -34,6 +34,7 @@
 /Users/jiyanglin/Projects/csvTool/csvApi/bin/Debug/net6.0/Microsoft.IdentityModel.Tokens.dll
 /Users/jiyanglin/Projects/csvTool/csvApi/bin/Debug/net6.0/Microsoft.SqlServer.Server.dll
 /Users/jiyanglin/Projects/csvTool/csvApi/bin/Debug/net6.0/Microsoft.Win32.SystemEvents.dll
+/Users/jiyanglin/Projects/csvTool/csvApi/bin/Debug/net6.0/Newtonsoft.Json.dll
 /Users/jiyanglin/Projects/csvTool/csvApi/bin/Debug/net6.0/System.Configuration.ConfigurationManager.dll
 /Users/jiyanglin/Projects/csvTool/csvApi/bin/Debug/net6.0/System.Drawing.Common.dll
 /Users/jiyanglin/Projects/csvTool/csvApi/bin/Debug/net6.0/System.IdentityModel.Tokens.Jwt.dll

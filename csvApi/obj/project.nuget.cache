@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "UYZ3A80XPTT/vJLWSNsqfeTxc6KVRlr+rV0x+JSJ3IUbCwTwD6EH0x3lkgaXhefAUu8c98T0TyKIMUvUHlbt0g==",
+  "dgSpecHash": "h9/wdbEXKos3/qpjhZnnRc7wWqRlQzCzA2sw4byuNR71QLd8sjH57FLx757k0WqIIcUC3uu+LWnrGuMbfwaNzA==",
   "success": true,
   "projectFilePath": "/Users/jiyanglin/Projects/csvTool/csvApi/csvApi.csproj",
   "expectedPackageFiles": [
@@ -39,6 +39,7 @@
     "/Users/jiyanglin/.nuget/packages/microsoft.sqlserver.server/1.0.0/microsoft.sqlserver.server.1.0.0.nupkg.sha512",
     "/Users/jiyanglin/.nuget/packages/microsoft.win32.registry/5.0.0/microsoft.win32.registry.5.0.0.nupkg.sha512",
     "/Users/jiyanglin/.nuget/packages/microsoft.win32.systemevents/5.0.0/microsoft.win32.systemevents.5.0.0.nupkg.sha512",
+    "/Users/jiyanglin/.nuget/packages/newtonsoft.json/13.0.2/newtonsoft.json.13.0.2.nupkg.sha512",
     "/Users/jiyanglin/.nuget/packages/system.buffers/4.5.1/system.buffers.4.5.1.nupkg.sha512",
     "/Users/jiyanglin/.nuget/packages/system.configuration.configurationmanager/5.0.0/system.configuration.configurationmanager.5.0.0.nupkg.sha512",
     "/Users/jiyanglin/.nuget/packages/system.diagnostics.diagnosticsource/5.0.0/system.diagnostics.diagnosticsource.5.0.0.nupkg.sha512",
