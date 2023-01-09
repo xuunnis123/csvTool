@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "aW7z+kOHTnq2EXCcAY5UaPjgvWFcvxMb3lwfhNd/8iE=",
+  "Source": "csvApi",
+  "BasePath": "_content/csvApi",
+  "Mode": "Default",
+  "ManifestType": "Publish",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

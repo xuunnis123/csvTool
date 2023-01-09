@@ -6,10 +6,12 @@ using csvApi.Models;
 using Microsoft.EntityFrameworkCore.SqlServer;
 using System.Text.Json;
 using Newtonsoft.Json;
+using Microsoft.AspNetCore.Hosting.Server;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<ApplicationDbContext>(opt => opt.UseSqlServer("Server=localhost,1433;Database=csv;User=sa;Password=reallyStrongPwd123;TrustServerCertificate=True"));
+builder.Services.AddDbContext<ApplicationDbContext>(opt => opt.UseSqlServer("Server=csv-server.database.windows.net,1433;Database=csv_collection;User=xuunnis123;Password=!Xuunnis456;TrustServerCertificate=True"));
+//builder.Services.AddDbContext<ApplicationDbContext>(opt => opt.UseSqlServer("Server=localhost,1433;Database=csv;User=sa;Password=reallyStrongPwd123;TrustServerCertificate=True"));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 
@@ -42,7 +44,7 @@ app.MapPost("/refreshVisitor", async (HttpRequest request, ApplicationDbContext 
 app.MapDelete("/deleteAllVisitors", async (ApplicationDbContext db) =>
     {
         try {
-            await db.Visitors.FromSqlRaw("dbo.DeleteAllVisitor2").ToListAsync();
+            await db.Visitors.FromSqlRaw("dbo.DeleteAllVisitor").ToListAsync();
            
         }
 

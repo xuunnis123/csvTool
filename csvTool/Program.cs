@@ -33,8 +33,9 @@ class Program {
                 // GET
                 using (var client = new HttpClient())
                 {
-                    
-                    string url = "http://localhost:54586/getAllVisitors";
+
+                    //string url = "http://localhost:54586/getAllVisitors";
+                    string url = "https://csvapi.azurewebsites.net/getAllVisitors";
 
                     var response = Task.Run(() => client.GetAsync(url)).Result;
                     
@@ -62,8 +63,8 @@ class Program {
                 //DELETE
                 using (var client = new HttpClient())
                 {
-                    string url = "http://localhost:54586/deleteAllVisitors";
-
+                    //string url = "http://localhost:54586/deleteAllVisitors";
+                    string url = "https://csvapi.azurewebsites.net/deleteAllVisitors";
                     // 發出 HTTP DELETE 請求
 
                     var deleteResponse = Task.Run(() => client.DeleteAsync(url)).Result;
@@ -94,7 +95,8 @@ class Program {
                                 using (var postClient = new HttpClient())
                                 {
                                     //client.DefaultRequestHeaders.Add("Content-Type", "application/json");
-                                    string postUrl = "http://localhost:54586/refreshVisitor";
+                                    //string postUrl = "http://localhost:54586/refreshVisitor";
+                                    string postUrl = "https://csvapi.azurewebsites.net/refreshVisitor";
                                     var content = new StringContent(JsonConvert.SerializeObject(new
                                     {
                                         id = i,
